@@ -1,3 +1,7 @@
+#self executable code just for implementing pure face recognition functionality using Dlib and OpenCV.
+# This code captures images from the webcam, trains a face recognition model, and recognizes faces in real-time.
+# It uses SQLite to store user data and face encodings, and it displays recognized faces with
+
 import cv2
 import dlib
 import numpy as np
