@@ -35,6 +35,16 @@ class FaceData(db.Model):
     owner_email = db.Column(db.String(120), db.ForeignKey('user.email'), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
+#Healthcheck rounte
+@app.route("/", methods=["GET"])
+def root():
+    return jsonify(status="ok", service="face-scanner-web-app"), 200
+
+@app.route("/health", methods=["GET"])
+def health_check():
+    return jsonify(status="healthy"), 200
+
+
 # Signup route
 @app.route('/signup', methods=['POST'])
 def signup():
